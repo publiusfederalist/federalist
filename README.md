@@ -3,6 +3,9 @@
 
 federalist uses webtorrent to access web3 swarm websites.
 
+![Federalist Screenshot](https://github.com/publiusfederalist/federalist/blob/master/federalist.png?raw=true)
+
+
 ## Installation
 
 Required
