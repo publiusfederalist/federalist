@@ -1,0 +1,23 @@
+{
+  "name": "federalist",
+  "version": "1.0.0",
+  "description": "Access the federalist, a form of web3",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "keywords": [
+    "web3",
+    "federalist",
+    "handshake",
+    "bittorrent"
+  ],
+  "author": "root",
+  "license": "MIT",
+  "dependencies": {
+    "dohjs": "^0.3.2",
+    "electron": "^16.0.3",
+    "marked": "^4.0.5",
+    "webtorrent": "^1.5.8"
+  }
+}
