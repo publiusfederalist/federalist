@@ -48,6 +48,21 @@ app.on('window-all-closed', function () {
   if (process.platform !== 'darwin') app.quit();
 })
 
+function makeString(file) {
+  switch(file.substr(file.length-3)) {
+    case "png":
+    case "jpg":
+    case "gif":
+      return '<img src="data:image/'+file.substr(file.length-3)+';base64,'+Buffer.from(fs.readFileSync(file)).toString('base64')+'">';
+    default:
+      break;
+  }
+  if(file.substr(file.length-3)==".md")
+    return marked.parse(fs.readFileSync(file).toString());
+  else
+    return fs.readFileSync(file).toString();
+}
+
 function go(hash,path,name) {
   let files = fs.readdirSync(TEMP_FOLDER+hash+'/web3root');
   let displayed = false;
@@ -62,7 +77,7 @@ function go(hash,path,name) {
   files.forEach((file)=> {
     if(file==path.substr(1)) {
       displayed=true;
-      mainWindow.webContents.send('show',marked.parse(fs.readFileSync(TEMP_FOLDER+hash+'/web3root'+path).toString()));
+      mainWindow.webContents.send('show',makeString(TEMP_FOLDER+hash+'/web3root'+path));
     }
     directory+="- "+file;
   });
@@ -72,7 +87,7 @@ function go(hash,path,name) {
     else if(path == "/")
       mainWindow.webContents.send('show',marked.parse(directory));
     else
-      mainWindow.webContents.send('show',marked.parse(fs.readFileSync(TEMP_FOLDER+currentHost+'/web3root'+path).toString()));
+      mainWindow.webContents.send('show',makeString(TEMP_FOLDER+currentHost+'/web3root'+path));
   }
   if(name=='')
     mainWindow.webContents.send('updateAddress',"magnet:?xt=urn:btih:"+hash+path);
