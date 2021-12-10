@@ -93,6 +93,12 @@ which points to:
 magnet:?xs=urn:btpk:e239849106256aad20b0ddadd9f2cb013910dab3207f3b200fbe2e76899cb6c2
 ```
 
+## Discussion
+
+Please make an issue on github for any bugs or feature requests.  To discuss more,
+join #scarywater on irc.freenode.net.
+
+
 ## Copyright and License
 
 (c) 2021 Publius
