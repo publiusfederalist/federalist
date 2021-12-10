@@ -39,7 +39,6 @@ This software is a POC and is in version 0.1a.  This is an upgrade from the prev
 
 ![Federalist Screenshot](https://github.com/publiusfederalist/federalist/blob/master/federalist.png?raw=true)
 
-Note: This is an older version and the current version does not parse markdown unless a publisher wishes to include marked, etc. (They can)
 
 ## Use Cases
 
