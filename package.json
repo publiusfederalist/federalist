@@ -18,6 +18,7 @@
     "dohjs": "^0.3.2",
     "electron": "^16.0.3",
     "marked": "^4.0.5",
+    "supercop.js": "^2.0.1",
     "webtorrent": "^1.5.8"
   }
 }

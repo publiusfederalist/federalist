@@ -3,16 +3,17 @@
 
 ### Short Description
 
-federalist uses webtorrent to access web3 swarm websites.
-
+federalist uses webtorrent with BEP 46 and Handshake domain resolution to access truly decentralized, web3 swarm websites.
 
 ### Long Description
 
-federalist is a proof of concept to show that it's possible, today, to create an uncensorable and generally unblockable, distributed high performance
+federalist is a proof of concept to show that it's possible, today, to create a decentralized, uncensorable and generally unblockable, distributed high performance
 viewable page.  federalist achieves this by using several amazing technologies and weaves them together:
 
 - [WebTorrent](https://github.com/webtorrent) - Provides torrenting capabilities and the bulk of the system.  federalist pages are torrents that are
 distributed via magnet links and DHT is used to find peers.
+
+- [DMT](https://github.com/lmatteis/dmt) - Reference implementation of decentralized mutable torrents, [BEP 46](https://github.com/lmatteis/bittorrent.org/blob/master/beps/bep_0046.rst).
 
 - [Handshake](https://github.com/handshake-org/) - Provides decentralized DNS
 
@@ -20,10 +21,25 @@ distributed via magnet links and DHT is used to find peers.
 
 - [Electron](https://github.com/electron) - Provides the GUI
 
+- [Chromium](https://github.com/chromium/chromium) - Electron uses this really cool software to deliver GUI applications that can be made with HTML, CSS and Javascript.
+
+### Features
+
+- Update your web3 swarm site without updating your DNS, as often as you'd like.
+
+- Use HTML, CSS and Javascript
+
+- Unblockable and unblockable.
+
+### Status
+
+This software is a POC and is in version 0.1a.  This is an upgrade from the previous version which worked with markdown files and only immutable destinations.
 
 ### Screenshot
 
 ![Federalist Screenshot](https://github.com/publiusfederalist/federalist/blob/master/federalist.png?raw=true)
+
+Note: This is an older version and the current version does not parse markdown unless a publisher wishes to include marked, etc. (They can)
 
 ## Use Cases
 
@@ -36,6 +52,8 @@ distributed via magnet links and DHT is used to find peers.
 - Share meta information about other torrents
 
 - Create an unblockable personal link site
+
+- Save bandwidth and CDN costs
 
 ## federalist
 
@@ -65,9 +83,16 @@ npm install
 npm start
 ```
 
-4. Access a web3 swarm site.
+4. Access a decentralized, web3 swarm site.
 ```
 federalist://federalistpapers
+```
+
+Note: (This note will be removed after 10 December, 2021 at 12:00 PM UTC) The domain federalistpapers has been updated at around 6AM UTC on 10 December, 2021, so it will begin to resolve at around 12PM UTC.
+
+Until then you can use the URL
+```
+magnet:?xs=urn:btpk:e239849106256aad20b0ddadd9f2cb013910dab3207f3b200fbe2e76899cb6c2
 ```
 
 ## Copyright and License
