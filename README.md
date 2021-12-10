@@ -1,9 +1,9 @@
 # federalist
-## Access files on the web3 swarm.
+## Access a new kind of decentralized website on the DHT
 
 ### Short Description
 
-federalist uses webtorrent with BEP 46 and Handshake domain resolution to access truly decentralized, web3 swarm websites.
+federalist uses webtorrent with BEP 46 and Handshake domain resolution to access truly decentralized, unblockable swarm websites.
 
 ### Long Description
 
@@ -25,7 +25,7 @@ distributed via magnet links and DHT is used to find peers.
 
 ### Features
 
-- Update your web3 swarm site without updating your DNS, as often as you'd like.
+- Update your unblockable swarm site without updating your DNS, as often as you'd like.
 
 - Use HTML, CSS and Javascript
 
@@ -83,7 +83,7 @@ npm install
 npm start
 ```
 
-4. Access a decentralized, web3 swarm site.
+4. Access a decentralized, unblockable swarm site.
 ```
 federalist://federalistpapers
 ```
