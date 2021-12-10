@@ -29,7 +29,7 @@ distributed via magnet links and DHT is used to find peers.
 
 - Use HTML, CSS and Javascript
 
-- Unblockable and unblockable.
+- Unblockable
 
 ### Status
 
@@ -88,9 +88,8 @@ npm start
 federalist://federalistpapers
 ```
 
-Note: (This note will be removed after 10 December, 2021 at 12:00 PM UTC) The domain federalistpapers has been updated at around 6AM UTC on 10 December, 2021, so it will begin to resolve at around 12PM UTC.
+which points to:
 
-Until then you can use the URL
 ```
 magnet:?xs=urn:btpk:e239849106256aad20b0ddadd9f2cb013910dab3207f3b200fbe2e76899cb6c2
 ```
