@@ -125,9 +125,9 @@ ipcMain.on('go',async (event,arg) => {
   if(!fs.existsSync(TEMP_FOLDER+target.hash)) {
     if(!client.get(target.hash)) {
       client.add("magnet:?xt=urn:btih:"+target.hash,{path:TEMP_FOLDER+target.hash},(torrent) => {
-        if(torrent.length>10000000) {
+        if(torrent.length>25000000) {
           client.remove(torrent.infoHash);
-          mainWindow.webContents.send('show','Over 10MB');
+          mainWindow.webContents.send('show','Over 25MB');
           return;
         }
         torrent.on('done',()=> {
