@@ -44,7 +44,7 @@ This software is a POC and is in version 0.1a.  This is an upgrade from the prev
 
 - Create an unblockable blog
 
-- Whistleblow
+- Whistleblow (must use an anonymizer)
 
 - Share information
 
