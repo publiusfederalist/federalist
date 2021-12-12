@@ -56,18 +56,18 @@ var current = {
   pos: -1
 };
 function go(hash,path,name) {
-  let files = fs.readdirSync(TEMP_FOLDER+hash+'/web3root');
+  let files = getFiles(TEMP_FOLDER+hash+'/web3root');
   let displayed = false;
   let directory = "# Directory listing";
 
-  if(!path || path=="")
+  if(!path || path=="" || path=="/")
     path="/index.html";
 
   current.host = hash;
   current.name = name;
 
   files.forEach((file)=> {
-    if(file==path.substr(1)) {
+    if(file.substr((TEMP_FOLDER+hash+'/web3root/').length)==path.substr(1)) {
       displayed=true;
       mainWindow.webContents.send('show','file:///'+TEMP_FOLDER+hash+'/web3root'+path);
     }
@@ -125,9 +125,9 @@ ipcMain.on('go',async (event,arg) => {
   if(!fs.existsSync(TEMP_FOLDER+target.hash)) {
     if(!client.get(target.hash)) {
       client.add("magnet:?xt=urn:btih:"+target.hash,{path:TEMP_FOLDER+target.hash},(torrent) => {
-        if(torrent.length>25000000) {
+        if(torrent.length>10000000) {
           client.remove(torrent.infoHash);
-          mainWindow.webContents.send('show','Over 25MB');
+          mainWindow.webContents.send('show','Over 10MB');
           return;
         }
         torrent.on('done',()=> {
@@ -244,6 +244,14 @@ async function runConsume(publicKey) {
     });
   });
 }
-
-
-
+function getFiles(mpath, mfiles) {
+  let files = fs.readdirSync(mpath);
+  mfiles = mfiles || [];
+  files.forEach((file)=> {
+    if(fs.statSync(mpath + "/" + file).isDirectory())
+      mfiles = getFiles(mpath + "/" + file,mfiles);
+    else
+      mfiles.push(path.join(mpath,"/",file));
+  });
+  return mfiles;
+}
