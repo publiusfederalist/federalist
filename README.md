@@ -1,8 +1,6 @@
 # federalist
 ## Access a new kind of decentralized website on the DHT
 
-# [Why I Quit Handshake](https://github.com/publiusfederalist/why-i-quit-handshake)
-
 ### Short Description
 
 federalist uses webtorrent with BEP 46 and Handshake domain resolution to access truly decentralized, unblockable swarm websites.
