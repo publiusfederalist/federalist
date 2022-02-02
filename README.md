@@ -3,6 +3,10 @@
 
 ## Learn more by joining the [Handshake Discord Community](https://discord.gg/tXJ2UdGuda)
 
+## Extension
+
+An extension was made by the [Kyokan](https://kyokan.io) team.  [Bob Extension](https://chrome.google.com/webstore/detail/bob-extension/ogcmjchbmdichlfelhmceldndgmgpcem?hl=en-US) supports the federalist protocol and a plethora of other features including Handshake wallet support!  This is highly recommended to use moving forward.  This repo will be updated soon to support webrtc.
+
 ### Short Description
 
 federalist uses webtorrent with BEP 46 and Handshake domain resolution to access truly decentralized, unblockable swarm websites.
